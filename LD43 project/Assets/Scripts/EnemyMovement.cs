@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
     Rigidbody2D rb;
+    public int speed;
     float x;
     float y;
     // Use this for initialization
@@ -13,19 +14,19 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameObject.Find("Character").transform.position.x > transform.position.x)
+        if (GameObject.Find("Player").transform.position.x > transform.position.x)
             x = 1;
-        if (GameObject.Find("Character").transform.position.x == transform.position.x)
+        if (GameObject.Find("Player").transform.position.x == transform.position.x)
             x = 0;
-        if (GameObject.Find("Character").transform.position.x < transform.position.x)
+        if (GameObject.Find("Player").transform.position.x < transform.position.x)
             x = -1;
-        if (GameObject.Find("Character").transform.position.y > transform.position.y)
+        if (GameObject.Find("Player").transform.position.y > transform.position.y)
             y = 1;
-        if (GameObject.Find("Character").transform.position.y == transform.position.y)
+        if (GameObject.Find("Player").transform.position.y == transform.position.y)
             y = 0;
-        if (GameObject.Find("Character").transform.position.y < transform.position.y)
+        if (GameObject.Find("Player").transform.position.y < transform.position.y)
             y = -1;
-        rb.velocity = new Vector2(10 * x, 10 * y);
+        rb.velocity = new Vector2(speed * x, speed * y);
         //GameObject.Find("Character").transform.position;
     }
 }

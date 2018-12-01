@@ -7,6 +7,7 @@ TagManager:
   - Spawnpoint
   - Template
   - Room
+  - Arrow
   layers:
   - Default
   - TransparentFX

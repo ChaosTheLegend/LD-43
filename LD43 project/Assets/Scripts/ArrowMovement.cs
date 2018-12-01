@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ArrowMovement : MonoBehaviour {
     Rigidbody2D rb;
-    Vector2 target;
-	// Use this for initialization
-	void Start () {
-        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //Vector2 target;
+    Vector3 moveDirection;
+    public float speed;
+    // Use this for initialization
+    void Start () {
+        //target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
         rb = GetComponent<Rigidbody2D>();
+        moveDirection.z = 0;
+        moveDirection.Normalize();
         Invoke("DestroyObject", 10);
     }
 
     // Update is called once per frame
     void Update () {
-        rb.velocity = Vector2.MoveTowards(transform.position, target, 40);
+        transform.position = transform.position + moveDirection * speed * Time.deltaTime;
+        //rb.velocity = Vector2.MoveTowards(transform.position, target, 0);
     }
     void DestroyObject()
     {

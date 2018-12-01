@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4505569d78ae044680175db1cca789f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!114 &114883883551539608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 50340405466976554, guid: 63d497854abc2f94c9f7d29fb01274d7, type: 2}
+  player: {fileID: 1671703882859948}
 --- !u!212 &212935571620024292
 SpriteRenderer:
   m_ObjectHideFlags: 1

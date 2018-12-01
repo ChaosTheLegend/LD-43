@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114699659996633380}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33cbe3394f9f7c48b11707bd02c5ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!212 &212816883842716702
 SpriteRenderer:
   m_ObjectHideFlags: 1

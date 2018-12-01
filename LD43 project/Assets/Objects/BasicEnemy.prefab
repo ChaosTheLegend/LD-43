@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212476524449036010}
   - component: {fileID: 50573995119307538}
   - component: {fileID: 61233326235292984}
+  - component: {fileID: 114997472621789102}
   - component: {fileID: 114581039413628146}
   m_Layer: 0
   m_Name: BasicEnemy
@@ -97,6 +98,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &114997472621789102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617586012621370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5a5bbbdf13e8c4ba3eaff06afb0684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212476524449036010
