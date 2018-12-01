@@ -13,7 +13,7 @@ public class PlayerAttackBow : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(arrow, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(arrow, GameObject.Find("Character").transform.position, Quaternion.identity);
         }
 
     }
