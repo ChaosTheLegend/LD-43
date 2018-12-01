@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1730799756725306}
+  m_IsPrefabAsset: 1
+--- !u!1 &1730799756725306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4563084339333314}
+  - component: {fileID: 114078508710752152}
+  m_Layer: 0
+  m_Name: RoomTemplates
+  m_TagString: Template
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4563084339333314
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730799756725306}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114078508710752152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730799756725306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff9d204e736dce4b89826eb46c61d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftCorridors:
+  - {fileID: 1136376273438500, guid: fedeb21371021174fac3bbdfff4382ab, type: 2}
+  - {fileID: 1065583958930434, guid: cb109185ed9c38b41bb9ddb732eec405, type: 2}
+  - {fileID: 1130347953234424, guid: 5ca71a5f6cec9d14fae3460b9caa6068, type: 2}
+  RightCorridors:
+  - {fileID: 1136376273438500, guid: fedeb21371021174fac3bbdfff4382ab, type: 2}
+  - {fileID: 1509152683740772, guid: 40050b1fcdb27cd4791388f70f970202, type: 2}
+  - {fileID: 1084949906825656, guid: 06f507ae8284bda44bf0f642acd02367, type: 2}
+  UpCorridors:
+  - {fileID: 1065583958930434, guid: cb109185ed9c38b41bb9ddb732eec405, type: 2}
+  - {fileID: 1509152683740772, guid: 40050b1fcdb27cd4791388f70f970202, type: 2}
+  - {fileID: 1089799672298826, guid: 8e48ec26cec1731439029394b4df21c9, type: 2}
+  DownCorridors:
+  - {fileID: 1130347953234424, guid: 5ca71a5f6cec9d14fae3460b9caa6068, type: 2}
+  - {fileID: 1089799672298826, guid: 8e48ec26cec1731439029394b4df21c9, type: 2}
+  - {fileID: 1084949906825656, guid: 06f507ae8284bda44bf0f642acd02367, type: 2}
+  LeftWay:
+  - {fileID: 1296163136973036, guid: 59bfca7f852b5644092208acbbc65ae8, type: 2}
+  - {fileID: 1394937825849590, guid: e7b03a6cb9ed50f4cbcc236adc968566, type: 2}
+  - {fileID: 1188458662584628, guid: 646722db1780ae144b9f80a598bc8588, type: 2}
+  RightWay:
+  - {fileID: 1296163136973036, guid: 59bfca7f852b5644092208acbbc65ae8, type: 2}
+  - {fileID: 1394937825849590, guid: e7b03a6cb9ed50f4cbcc236adc968566, type: 2}
+  - {fileID: 1229443224476536, guid: 1392ae20ad8eb26488be7ded7d4318d7, type: 2}
+  UpWay:
+  - {fileID: 1296163136973036, guid: 59bfca7f852b5644092208acbbc65ae8, type: 2}
+  - {fileID: 1229443224476536, guid: 1392ae20ad8eb26488be7ded7d4318d7, type: 2}
+  - {fileID: 1188458662584628, guid: 646722db1780ae144b9f80a598bc8588, type: 2}
+  DownWay:
+  - {fileID: 1394937825849590, guid: e7b03a6cb9ed50f4cbcc236adc968566, type: 2}
+  - {fileID: 1229443224476536, guid: 1392ae20ad8eb26488be7ded7d4318d7, type: 2}
+  - {fileID: 1188458662584628, guid: 646722db1780ae144b9f80a598bc8588, type: 2}
+  LeftEnd:
+  - {fileID: 1775098583865866, guid: 589a68684fd41594c858ea000a2c67c2, type: 2}
+  RightEnd:
+  - {fileID: 1196988092836246, guid: 3880c8043a69bde4d943aa786b45b3a8, type: 2}
+  UpEnd:
+  - {fileID: 1314573436780060, guid: 7d80ceebd184b06468149c7a61cfb811, type: 2}
+  DownEnd:
+  - {fileID: 1290917826057714, guid: 0d71f84542de2f2488f42130a2b02be8, type: 2}
+  exit: {fileID: 1617586012621370, guid: e2e06d9f44a054c4ba40be31b087afec, type: 2}
+  StartRoom: {fileID: 1387950186997076, guid: c87027bc977874849bd2afd86e79f72d, type: 2}
+  Rooms: []
+  LoadTime: 4
+  MinSize: 20
