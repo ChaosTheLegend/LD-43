@@ -16,7 +16,6 @@ public class RoomGenerator : MonoBehaviour {
 
     [Header("Generation properties")]
     public int size;
-	
     int _total;
     int _dir;
 
@@ -55,7 +54,6 @@ public class RoomGenerator : MonoBehaviour {
             yield return new WaitForSeconds(0.08f);
             GenerateOneRoom();
         } while (_total != size);
-        CollectCreationPoints();
     }
 
     void GenerateOneRoom()
@@ -83,14 +81,14 @@ public class RoomGenerator : MonoBehaviour {
             _rooms.Remove(_prev);
             Destroy(_prev);
             _prev = _rooms[_rooms.Count - 1];
-            _dir = _prev.GetComponent<room>().exitdir;
+            _dir = _prev.GetComponent<Room>().exitdir;
             _taboorooms = new List<GameObject>();
             return;
         }
 
         GameObject ChoseRoom = prefabs[Random.Range(0, prefabs.Count)];
         GameObject newroom = Instantiate(ChoseRoom, Vector3.zero, transform.rotation);
-        Vector3 spawnpos = _prev.GetComponent<room>().end.position - newroom.GetComponent<room>().dis;
+        Vector3 spawnpos = _prev.GetComponent<Room>().end.position - newroom.GetComponent<Room>().dis;
         newroom.transform.position = spawnpos;
         var ccollider = newroom.GetComponent<CompositeCollider2D>();
         var newbounds = ccollider.bounds;
@@ -110,7 +108,7 @@ public class RoomGenerator : MonoBehaviour {
         _rooms.Add(newroom);
         _roombounds.Add(newbounds);
         _prev = newroom;
-        _dir = newroom.GetComponent<room>().exitdir;
+        _dir = newroom.GetComponent<Room>().exitdir;
         _total++;
         _taboorooms = new List<GameObject>();
     }
@@ -124,14 +122,14 @@ public class RoomGenerator : MonoBehaviour {
         bounds.size = bounds.size * 0.9999f;
         bounds.center = ccollider.bounds.center;
         _roombounds.Add(bounds);
-        _dir = room.GetComponent<room>().exitdir;
+        _dir = room.GetComponent<Room>().exitdir;
         _prev = room;
         _total++;
     }
     void GenerateLastRoom()
     {
         GameObject room = Instantiate(end[_dir], Vector3.zero, transform.rotation);
-        Vector3 spawnpos = _prev.GetComponent<room>().end.position - room.GetComponent<room>().dis;
+        Vector3 spawnpos = _prev.GetComponent<Room>().end.position - room.GetComponent<Room>().dis;
         room.transform.position = spawnpos;
         var ccollider = room.GetComponent<CompositeCollider2D>();
         var newbounds = ccollider.bounds;
@@ -148,7 +146,7 @@ public class RoomGenerator : MonoBehaviour {
                 _rooms.Remove(_prev);
                 Destroy(_prev);
                 _prev = _rooms[_rooms.Count - 1];
-                _dir = _prev.GetComponent<room>().exitdir;
+                _dir = _prev.GetComponent<Room>().exitdir;
                 _taboorooms = new List<GameObject>();
                 return;
             }
