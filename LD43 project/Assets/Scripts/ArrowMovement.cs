@@ -11,6 +11,7 @@ public class ArrowMovement : MonoBehaviour {
     void Start () {
         //target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+        Physics2D.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider2D>(), GetComponent<Collider2D>());
         rb = GetComponent<Rigidbody2D>();
         moveDirection.z = 0;
         moveDirection.Normalize();
@@ -24,6 +25,11 @@ public class ArrowMovement : MonoBehaviour {
     }
     void DestroyObject()
     {
-        Destroy(GameObject.Find("Arrow(Clone)"));
+        Destroy(gameObject);
+
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        DestroyObject();
     }
 }

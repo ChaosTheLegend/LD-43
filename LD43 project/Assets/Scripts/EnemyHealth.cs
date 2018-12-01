@@ -14,11 +14,16 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //Output the Collider's GameObject's name
-        Debug.Log(collision.collider.name);
+        if (collision.gameObject.name == "Arrow(Clone)")
+        {
+            health = health - 25;
+        }
     }
 }
