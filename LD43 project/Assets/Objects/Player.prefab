@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1495473690348602}
-  bow: {fileID: 1242640090120492, guid: 5096ed09a10e9e0489384c66df46eaaa, type: 2}
+  bow: {fileID: 1116088334908696, guid: 12d3536ce9b25234498d0db0606762f2, type: 2}
   sword: {fileID: 1242640090120492, guid: 5096ed09a10e9e0489384c66df46eaaa, type: 2}
   spear: {fileID: 1094495955692896, guid: 93d25fe8bc5302448b202644c5d202e6, type: 2}
   inv1: Bow
