@@ -52,9 +52,10 @@ GameObject:
   - component: {fileID: 4984590241500196}
   - component: {fileID: 212312796709102104}
   - component: {fileID: 61374404058542836}
+  - component: {fileID: 114348498802329208}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,9 +135,10 @@ GameObject:
   - component: {fileID: 4246703708167984}
   - component: {fileID: 212408245788714208}
   - component: {fileID: 61893822391195040}
+  - component: {fileID: 114897599481636752}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +376,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1495473690348602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4163823380360870}
@@ -612,6 +614,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rend: {fileID: 212995901330765042}
+--- !u!114 &114348498802329208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147805257259328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3e54da292f474448ea29fbcabc490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  Knockback: 0
+  Element: 0
 --- !u!114 &114570255973492210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -664,6 +680,23 @@ MonoBehaviour:
   Spear: {fileID: 1890137339969726}
   Bow: {fileID: 1114286794973372}
   Arrow: {fileID: 0}
+  HitBoxes:
+  - {fileID: 1147805257259328}
+  - {fileID: 1464820062030452}
+--- !u!114 &114897599481636752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464820062030452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3e54da292f474448ea29fbcabc490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  Knockback: 0
+  Element: 0
 --- !u!114 &114908429232814594
 MonoBehaviour:
   m_ObjectHideFlags: 1

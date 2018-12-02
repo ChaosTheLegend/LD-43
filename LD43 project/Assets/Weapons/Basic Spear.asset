@@ -14,6 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 7a0216ff6823e8147ac586bcbeb2830b, type: 3}
   sprite: {fileID: 21300000, guid: 7a0216ff6823e8147ac586bcbeb2830b, type: 3}
   Name: Basic Spear
-  Damage: 1
+  Damage: 20
+  Knockback: 1.2
   element: 0
   _type: 2
