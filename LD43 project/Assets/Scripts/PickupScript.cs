@@ -33,15 +33,15 @@ public class PickupScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (inv1o == true) {
-            Inventory.inv1 = name;
+            //Inventory.inv1 = name;
         }
         if (inv2o == true)
         {
-            Inventory.inv2 = name;
+            //Inventory.inv2 = name;
         }
         if (inv2o == true)
         {
-            Inventory.inv3 = name;
+            //Inventory.inv3 = name;
         }
     }
 }
