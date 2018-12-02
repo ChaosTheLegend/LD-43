@@ -10,9 +10,9 @@ public class Inventory : MonoBehaviour {
     public string inv1;
     public string inv2;
     public string inv3;
-    bool inv1open = true;
-    bool inv2open = true;
-    bool inv3open = true;
+    static public bool inv1open;
+    static public bool inv2open;
+    static public bool inv3open;
 
     void Awake()
     {
@@ -20,8 +20,10 @@ public class Inventory : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-
-	}
+        inv1open = true;
+        inv2open = true;
+        inv3open = true;
+}
 	
 	// Update is called once per frame
 	void Update () {

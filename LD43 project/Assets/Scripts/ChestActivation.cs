@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ChestActivation : MonoBehaviour {
     public GameObject chestText;
+    public GameObject weapon;
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -19,5 +20,9 @@ public class ChestActivation : MonoBehaviour {
         {
             Instantiate(chestText, transform.position + new Vector3(0,0.9f,0), Quaternion.identity);
         }
+    }
+    void OnMouseDown()
+    {
+        Instantiate(weapon, transform.position + new Vector3(0, -0.9f, 0), Quaternion.identity);
     }
 }
