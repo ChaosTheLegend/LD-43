@@ -210,7 +210,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5b12ee2052ca304fb4b6f1b172de1d5, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1033739308
+--- !u!1001 &588277381
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -341,7 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad912e0620ba7440b80baa77317a3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1495473690348602, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
   x: 0
   y: 0
 --- !u!1001 &1764976014
