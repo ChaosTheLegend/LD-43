@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class InventoryC : MonoBehaviour {
     public GameObject player;
     public GameObject bow;
     public GameObject sword;
