@@ -10,9 +10,9 @@ public class Inventory : MonoBehaviour {
     public string inv1;
     public string inv2;
     public string inv3;
-    bool inv1open = false;
-    bool inv2open = false;
-    bool inv3open = false;
+    bool inv1open = true;
+    bool inv2open = true;
+    bool inv3open = true;
 
     void Awake()
     {
@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("1") && inv1open == false)
+        if (Input.GetKeyDown("1") && inv1open == true)
         {
             if (inv1 == "Bow")
             {
@@ -53,23 +53,23 @@ public class Inventory : MonoBehaviour {
             inv3open = true;
 
         }
-        if (Input.GetKeyDown("2") && inv2open == false)
+        if (Input.GetKeyDown("2") && inv2open == true)
         {
-            if (inv1 == "Bow")
+            if (inv2 == "Bow")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
                 Destroy(GameObject.Find("SpearTemp(Clone)"));
                 Instantiate(bow, transform.position, Quaternion.identity);
             }
-            if (inv1 == "Sword")
+            if (inv2 == "Sword")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
                 Destroy(GameObject.Find("SpearTemp(Clone)"));
                 Instantiate(sword, transform.position, Quaternion.identity);
             }
-            if (inv1 == "Spear")
+            if (inv2 == "Spear")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
@@ -81,23 +81,23 @@ public class Inventory : MonoBehaviour {
             inv3open = true;
 
         }
-        if (Input.GetKeyDown("3") && inv3open == false)
+        if (Input.GetKeyDown("3") && inv3open == true)
         {
-            if (inv1 == "Bow")
+            if (inv3 == "Bow")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
                 Destroy(GameObject.Find("SpearTemp(Clone)"));
                 Instantiate(bow, transform.position, Quaternion.identity);
             }
-            if (inv1 == "Sword")
+            if (inv3 == "Sword")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
                 Destroy(GameObject.Find("SpearTemp(Clone)"));
                 Instantiate(sword, transform.position, Quaternion.identity);
             }
-            if (inv1 == "Spear")
+            if (inv3 == "Spear")
             {
                 Destroy(GameObject.Find("BowTemp(Clone)"));
                 Destroy(GameObject.Find("SwordTemp(Clone)"));
