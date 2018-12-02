@@ -95,7 +95,7 @@ public class DirectionControll : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Spawnpoint") && other.GetComponent<DirectionControll>().done)
+        if (other.CompareTag("Spawnpoint"))
         {
             Destroy(gameObject);
         }
