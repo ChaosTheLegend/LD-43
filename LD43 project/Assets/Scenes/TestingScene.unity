@@ -258,9 +258,10 @@ Prefab:
         type: 2}
       propertyPath: Contance
       value: 
-      objectReference: {fileID: 11400000, guid: a1794f5e2e89d0f4ea312d0f66da6423,
+      objectReference: {fileID: 11400000, guid: 379d55bcc191ff240a9e7c947a9e769a,
         type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 58734964349116542, guid: f5b12ee2052ca304fb4b6f1b172de1d5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f5b12ee2052ca304fb4b6f1b172de1d5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &588277381
@@ -301,10 +302,6 @@ Prefab:
     - target: {fileID: 4941810496476096, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968238695796234, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}

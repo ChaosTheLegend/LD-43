@@ -8,6 +8,7 @@ TagManager:
   - Template
   - Room
   - Arrow
+  - PickUp
   layers:
   - Default
   - TransparentFX

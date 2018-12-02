@@ -25,13 +25,18 @@ public class SwordMovement : MonoBehaviour {
             SwordAnim.SetBool("Atk", false);
         }
 
-        if (SwordAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == AtkState.name)
+        try
         {
-            HitBox.SetActive(true);
+            if (SwordAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == AtkState.name)
+            {
+                HitBox.SetActive(true);
+            }
+            else
+            {
+                HitBox.SetActive(false);
+            }
         }
-        else
-        {
-            HitBox.SetActive(false);
-        }
+        catch
+        {}
     }
 }

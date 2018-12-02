@@ -15,24 +15,24 @@ public class ChestActivation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         {
-            chestText.SetActive(false);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 dis = transform.position - player.transform.position;
+            float len = dis.magnitude;
+            if (len < 2f && !opened)
+            {
+                    chestText.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GameObject obj = Instantiate(WeaponTemplate, transform.position + new Vector3(0, -1.3f, 0), Quaternion.identity);
+                        obj.GetComponent<DropControll>().item = Contance;
+                        opened = true;
+                    }
+            }
+            else
+            {
+                chestText.SetActive(false);
+            }
         }
 
-    }
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.name == "Player")
-        {
-            chestText.SetActive(true);
-        }
-    }
-    void OnMouseDown()
-    {
-        if (!opened)
-        {
-            GameObject obj = Instantiate(WeaponTemplate, transform.position + new Vector3(0, -0.9f, 0), Quaternion.identity);
-            obj.GetComponent<DropControll>().item = Contance;
-            opened = true;
-        }
     }
 }

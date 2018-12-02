@@ -21,16 +21,18 @@ public class SpearMovement : MonoBehaviour {
         {
             SpearAnim.SetBool("Atk", false);
         }
-
-        if (SpearAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == AttackState.name)
+        try
         {
-            HitBox.SetActive(true);
+            if (SpearAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == AttackState.name)
+            {
+                HitBox.SetActive(true);
+            }
+            else
+            {
+                HitBox.SetActive(false);
+            }
         }
-        else
-        {
-            HitBox.SetActive(false);
-        }
-
+        catch { }
 
 	}
 }
