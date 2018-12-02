@@ -20,6 +20,15 @@ public class WeaponControll : MonoBehaviour {
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dis = mouse - Player.localPosition;
         float angle = Mathf.Atan2(dis.y, dis.x) * Mathf.Rad2Deg;
+        if (angle > 90 || angle < -90)
+        {
+            rotatingthing.transform.localScale = new Vector3(-1, 1, 1);
+            angle = angle - 180;
+        }
+        else
+        {
+            rotatingthing.transform.localScale = new Vector3(1, 1, 1);
+        }
         rotatingthing.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, angle);
 
 	}
