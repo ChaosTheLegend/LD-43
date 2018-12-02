@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackBow : MonoBehaviour {
     public Rigidbody2D arrow;
-    public GameObject player;
+    public Transform ArrowSpawner;
 	// Use this for initialization
 	void Start () {
         
@@ -14,7 +14,7 @@ public class PlayerAttackBow : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(arrow, player.transform.position, Quaternion.identity);
+            Instantiate(arrow, ArrowSpawner.transform.position, ArrowSpawner.transform.rotation);
         }
 
     }

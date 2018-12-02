@@ -31,7 +31,7 @@ public class CharacterMovement : MonoBehaviour {
             //transform.localScale = new Vector2(1, -1);
             //rend.flipX = true;
         }
-        transform.localScale = new Vector2(1*turn, 1);
+        //transform.localScale = new Vector2(1*turn, 1);
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(x,y)*speed;
