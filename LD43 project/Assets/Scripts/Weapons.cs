@@ -11,7 +11,7 @@ public class Weapons : ScriptableObject {
     public string Name;
     public float Damage;
     public float Knockback;
-    public enum Elements {fire,water,earth }
+    public enum Elements {Ruby,Spphire,Emerald}
     public Elements element;
     public enum Type {bow,sword,spear }
     public Type _type;
