@@ -10,6 +10,7 @@ public class Weapons : ScriptableObject {
     public Sprite sprite;
     public string Name;
     public float Damage;
+    public float Knockback;
     public enum Elements {fire,water,earth }
     public Elements element;
     public enum Type {bow,sword,spear }
