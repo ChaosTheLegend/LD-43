@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class Weapons : ScriptableObject {
 
+    public Sprite Ui;
+    public Sprite sprite;
     public string Name;
     public float Damage;
     public enum Elements {fire,water,earth }
