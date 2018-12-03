@@ -303,22 +303,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1473124459903868, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1303281142669422, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968238695796234, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1464820062030452, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
   m_IsPrefabAsset: 0
@@ -329,11 +313,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114844747829435646, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: HPStates.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 224842206333958808, guid: 5f0170e3b4647e644b98e3d163293655,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -424,49 +403,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224908023986728346, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 316.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 224641380463462240, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 316.8001
-      objectReference: {fileID: 0}
-    - target: {fileID: 224908023986728346, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 163.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224641380463462240, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 163.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114844747829435646, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: Health
-      value: 
-      objectReference: {fileID: 1816684200}
-    - target: {fileID: 114844747829435646, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: HPStates.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 926886e20d21a4b449178ed56e5ccdd6,
-        type: 3}
-    - target: {fileID: 114844747829435646, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: HPStates.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: d52eb845f1cad344b8061bec507f4c92,
-        type: 3}
-    - target: {fileID: 114844747829435646, guid: 5f0170e3b4647e644b98e3d163293655,
-        type: 2}
-      propertyPath: HPStates.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4a4eb2f0f66b2b64b894a6ff85c996e9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0170e3b4647e644b98e3d163293655, type: 2}
   m_IsPrefabAsset: 0
@@ -623,24 +559,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
---- !u!1 &1738800666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1495473690348602, guid: 6f2f501ef027b2c4c8141fcb7d051927,
-    type: 2}
-  m_PrefabInternal: {fileID: 588277381}
---- !u!114 &1738800673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1738800666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b211bf139b105da419f4237add47a29a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 3
-  Cooldown: 0.7
 --- !u!1001 &1764976014
 Prefab:
   m_ObjectHideFlags: 0
@@ -697,12 +615,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a67eb8a9e9e144da7f9236d16ca185, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1816684200 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114830022331982960, guid: 5f0170e3b4647e644b98e3d163293655,
-    type: 2}
-  m_PrefabInternal: {fileID: 833222335}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1835584857
 Prefab:
   m_ObjectHideFlags: 0

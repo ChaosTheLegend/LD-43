@@ -8,12 +8,7 @@ public class InventoryC : MonoBehaviour {
     public GameObject sword;
     public GameObject spear;
     public GameObject RotatingThing;
-    public string inv1;
-    public string inv2;
-    public string inv3;
-    bool inv1open = true;
-    bool inv2open = true;
-    bool inv3open = true;
+    public int slot;
 
     void Awake()
     {
@@ -27,82 +22,64 @@ public class InventoryC : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("1") && inv1open == true)
-        {
-            if (inv1 == "Bow")
-            {
-                bow.SetActive(true);
-                sword.SetActive(false);
-                spear.SetActive(false);
+        ItemControll inv = RotatingThing.GetComponent<ItemControll>();
+        int type = (int)inv.weapon[slot]._type;
 
-            }
-            if (inv1 == "Sword")
-            {
+
+        switch(type)
+        {
+            case (0):
+            bow.SetActive(true);
+            sword.SetActive(false);
+            spear.SetActive(false);
+                break;
+            case (1):
                 bow.SetActive(false);
                 sword.SetActive(true);
                 spear.SetActive(false);
-            }
-            if (inv1 == "Spear")
-            {
+                break;
+            case (2):
                 bow.SetActive(false);
                 sword.SetActive(false);
                 spear.SetActive(true);
-            }
-            inv1open = false;
-            inv2open = true;
-            inv3open = true;
-
+                break;
         }
-        if (Input.GetKeyDown("2") && inv2open == true)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (inv2 == "Bow")
-            {
-                bow.SetActive(true);
-                sword.SetActive(false);
-                spear.SetActive(false);
-            }
-            if (inv2 == "Sword")
-            {
-                bow.SetActive(false);
-                sword.SetActive(true);
-                spear.SetActive(false);
-            }
-            if (inv2 == "Spear")
-            {
-                bow.SetActive(false);
-                sword.SetActive(false);
-                spear.SetActive(true);
-            }
-            inv2open = false;
-            inv1open = true;
-            inv3open = true;
-
+            slot = 0;
         }
-        if (Input.GetKeyDown("3") && inv3open == true)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (inv3 == "Bow")
-            {
-                bow.SetActive(true);
-                sword.SetActive(false);
-                spear.SetActive(false);
-            }
-            if (inv3 == "Sword")
-            {
-                bow.SetActive(false);
-                sword.SetActive(true);
-                spear.SetActive(false);
-            }
-            if (inv3 == "Spear")
-            {
-                bow.SetActive(false);
-                sword.SetActive(false);
-                spear.SetActive(true);
-            }
-            inv3open = false;
-            inv2open = true;
-            inv1open = true;
-
+            slot = 1;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            slot = 2;
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (slot < 2)
+            {
+                slot++;
+            }
+            else
+            {
+                slot = 0;
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if (slot > 0)
+            {
+                slot--;
+            }
+            else
+            {
+                slot = 2;
+            }
+        }
+
         if (FindNearestPickUp() != null)
         {
             GameObject other = FindNearestPickUp();
@@ -110,24 +87,10 @@ public class InventoryC : MonoBehaviour {
             float len = dis.magnitude;
             if (Input.GetKeyDown(KeyCode.E) && len <= 1.2f)
             {
-                int type = (int)other.GetComponent<DropControll>().item._type;
-                ItemControll inv = RotatingThing.GetComponent<ItemControll>();
                 Weapons buffer = other.GetComponent<DropControll>().item;
-                switch (type)
-                {
-                    case (0):
-                        other.GetComponent<DropControll>().item = inv.weapon[2];
-                        inv.weapon[2] = buffer;
-                        break;
-                    case (1):
-                        other.GetComponent<DropControll>().item = inv.weapon[0];
-                        inv.weapon[0] = buffer;
-                        break;
-                    case (2):
-                        other.GetComponent<DropControll>().item = inv.weapon[1];
-                        inv.weapon[1] = buffer;
-                        break;
-                }
+                other.GetComponent<DropControll>().item = inv.weapon[slot];
+                inv.weapon[slot] = buffer;
+                
                 //buffer = null;
             }
         }

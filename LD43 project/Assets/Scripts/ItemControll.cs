@@ -14,9 +14,22 @@ public class ItemControll : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Sword.GetComponent<SpriteRenderer>().sprite = weapon[0].sprite;
-        Spear.GetComponent<SpriteRenderer>().sprite = weapon[1].sprite;
-        Bow.GetComponent<SpriteRenderer>().sprite = weapon[2].sprite;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        int slot = player.GetComponent<InventoryC>().slot;
+
+        int type = (int)weapon[slot]._type;
+        switch (type)
+        {
+            case (0):
+                Bow.GetComponent<SpriteRenderer>().sprite = weapon[slot].sprite;
+                break;
+            case (1):
+                Sword.GetComponent<SpriteRenderer>().sprite = weapon[slot].sprite;
+                break;
+            case (2):
+                Spear.GetComponent<SpriteRenderer>().sprite = weapon[slot].sprite;
+                break;
+        }
 
         HitBoxes[0].GetComponent<HitboxControll>().Damage = weapon[0].Damage;
         HitBoxes[0].GetComponent<HitboxControll>().Knockback = weapon[0].Knockback;

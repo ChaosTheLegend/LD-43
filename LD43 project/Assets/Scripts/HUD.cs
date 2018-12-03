@@ -20,9 +20,9 @@ public class HUD : MonoBehaviour {
             {
                 Health.sprite = HPStates[hp - 1];
             }
-            Slots[0].sprite = RotatingThing.GetComponent<ItemControll>().weapon[2].sprite;
-            Slots[1].sprite = RotatingThing.GetComponent<ItemControll>().weapon[0].sprite;
-            Slots[2].sprite = RotatingThing.GetComponent<ItemControll>().weapon[1].sprite;
+            Slots[0].sprite = RotatingThing.GetComponent<ItemControll>().weapon[0].sprite;
+            Slots[1].sprite = RotatingThing.GetComponent<ItemControll>().weapon[1].sprite;
+            Slots[2].sprite = RotatingThing.GetComponent<ItemControll>().weapon[2].sprite;
         }
         catch { }
 
