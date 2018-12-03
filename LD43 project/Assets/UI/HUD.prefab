@@ -385,8 +385,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slots: []
+  SlotBackgorund: []
   Health: {fileID: 0}
   HPStates: []
+  SlotEmpty: {fileID: 0}
+  SlotFull: {fileID: 0}
+  SlotActive: {fileID: 0}
 --- !u!114 &114636322869115662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,11 +514,18 @@ MonoBehaviour:
   - {fileID: 114636322869115662}
   - {fileID: 114835184133139222}
   - {fileID: 114341542394607802}
+  SlotBackgorund:
+  - {fileID: 114090559200189324}
+  - {fileID: 114447038951862954}
+  - {fileID: 114384380441684396}
   Health: {fileID: 114830022331982960}
   HPStates:
   - {fileID: 21300000, guid: 4a4eb2f0f66b2b64b894a6ff85c996e9, type: 3}
   - {fileID: 21300000, guid: d52eb845f1cad344b8061bec507f4c92, type: 3}
   - {fileID: 21300000, guid: 926886e20d21a4b449178ed56e5ccdd6, type: 3}
+  SlotEmpty: {fileID: 21300000, guid: 8b14fd6a3699dc148a08c9eacae69e15, type: 3}
+  SlotFull: {fileID: 21300000, guid: 56ee7c472beaa33458691f42bee516fb, type: 3}
+  SlotActive: {fileID: 0}
 --- !u!114 &114869361156181724
 MonoBehaviour:
   m_ObjectHideFlags: 1

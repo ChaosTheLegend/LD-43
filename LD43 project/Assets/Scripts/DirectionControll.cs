@@ -32,11 +32,11 @@ public class DirectionControll : MonoBehaviour {
                 switch (Opening)
             {
                 case (direction.up):
-                    if (RNG < 20)
+                    if (RNG < 30)
                     {
                         Instantiate(temp.UpWay[Random.Range(0, temp.UpWay.Length)], transform.position, transform.rotation);
                     }
-                    else if (RNG < 70)
+                    else if (RNG < 80)
                     {
                         Instantiate(temp.UpCorridors[Random.Range(0, temp.UpCorridors.Length)], transform.position, transform.rotation);
                     }
@@ -95,9 +95,17 @@ public class DirectionControll : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Spawnpoint"))
+        if(!done && other.CompareTag("Spawnpoint"))
         {
-            Destroy(gameObject);
+            if (other.GetComponent<DirectionControll>().done == false)
+            {
+                Instantiate(temp.Wall, transform.position, transform.rotation);
+                done = true;
+            }
+            else
+            {
+                done = true;
+            }
         }
     }
 

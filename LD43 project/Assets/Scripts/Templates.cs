@@ -19,6 +19,8 @@ public class Templates : MonoBehaviour {
     public GameObject[] UpEnd;
     public GameObject[] DownEnd;
 
+    public GameObject Wall;
+
     public GameObject exit;
     public GameObject StartRoom;
     public List<GameObject> Rooms;
