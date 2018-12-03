@@ -10,6 +10,7 @@ TagManager:
   - Arrow
   - PickUp
   - HitBox
+  - Enemy
   layers:
   - Default
   - TransparentFX
