@@ -296,14 +296,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1730799756725306, guid: d31d0b2278ccbd3459f2b8c18b36a181, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114078508710752152, guid: d31d0b2278ccbd3459f2b8c18b36a181,
         type: 2}
-      propertyPath: StartRoom
-      value: 
-      objectReference: {fileID: 1779304057060762, guid: 722181f0e3b015745aca0b14cdc6e63e,
-        type: 2}
+      propertyPath: LoadTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31d0b2278ccbd3459f2b8c18b36a181, type: 2}
   m_IsPrefabAsset: 0

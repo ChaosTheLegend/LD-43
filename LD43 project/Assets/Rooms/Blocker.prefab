@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4751683670326696}
   - component: {fileID: 8195094281570304084}
   - component: {fileID: 3664157344741433352}
-  - component: {fileID: 2113883505037688310}
+  - component: {fileID: 2113883504619081948}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -56,9 +56,10 @@ GameObject:
   - component: {fileID: 4556436491480978}
   - component: {fileID: 2569400267110267246}
   - component: {fileID: 114208671202309850}
+  - component: {fileID: 61810812369492052}
   m_Layer: 0
   m_Name: Blocker
-  m_TagString: Room
+  m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +125,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61810812369492052
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860855816281824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0
 --- !u!66 &66836516322606568
 CompositeCollider2D:
   m_ObjectHideFlags: 1
@@ -155,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c157577255080754bb7e39e7c3b228a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!19719996 &2113883505037688310
+--- !u!19719996 &2113883504619081948
 TilemapCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

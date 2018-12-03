@@ -93,6 +93,7 @@ public class DirectionControll : MonoBehaviour {
         }
         
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(!done && other.CompareTag("Spawnpoint"))
@@ -100,12 +101,9 @@ public class DirectionControll : MonoBehaviour {
             if (other.GetComponent<DirectionControll>().done == false)
             {
                 Instantiate(temp.Wall, transform.position, transform.rotation);
-                done = true;
+                Destroy(gameObject);
             }
-            else
-            {
-                done = true;
-            }
+            done = true;
         }
     }
 

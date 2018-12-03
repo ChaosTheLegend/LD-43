@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4563084339333314
 Transform:
   m_ObjectHideFlags: 1
@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 1954548422874340, guid: 6edb6293efb33e64ab905a3fac93c38f, type: 2}
   DownEnd:
   - {fileID: 1690768477516138, guid: ed481f716aeb75845ac9a0ecd657cf30, type: 2}
+  Wall: {fileID: 1860855816281824, guid: 2262deda503c6ea4c9181237572c7522, type: 2}
   exit: {fileID: 1053206149780044, guid: 69f183d73e19f54428ed38dcd5ef3063, type: 2}
   StartRoom: {fileID: 1922728562799248, guid: 186cb650aa0bd0e499b9d2a992cce22f, type: 2}
   Rooms: []

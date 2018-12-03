@@ -12,6 +12,7 @@ TagManager:
   - HitBox
   - Enemy
   - Altar
+  - Blocker
   layers:
   - Default
   - TransparentFX
