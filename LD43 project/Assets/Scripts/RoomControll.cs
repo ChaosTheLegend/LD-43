@@ -11,6 +11,7 @@ public class RoomControll : MonoBehaviour {
     public GameObject Layout;
     Bounds bnd;
 
+
     void Update () {
         if (State == RoomState.inactive)
         {

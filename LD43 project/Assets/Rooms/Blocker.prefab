@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 2569400267110267246}
   - component: {fileID: 114208671202309850}
   - component: {fileID: 61810812369492052}
+  - component: {fileID: 50990337951243546}
   m_Layer: 0
   m_Name: Blocker
   m_TagString: Blocker
@@ -125,6 +126,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50990337951243546
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860855816281824}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61810812369492052
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -148,7 +169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
 --- !u!66 &66836516322606568
 CompositeCollider2D:

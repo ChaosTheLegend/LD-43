@@ -28,6 +28,8 @@ public class Templates : MonoBehaviour {
     public int MinSize;
     float tm;
 
+    public bool generated = false;
+
     private void Awake()
     {
         tm = LoadTime;
@@ -53,10 +55,31 @@ public class Templates : MonoBehaviour {
             else
             {
                 Instantiate(exit, Rooms[Rooms.Count - 1].transform.position, transform.rotation);
+                RemoveMissing();
+                foreach (GameObject room in Rooms)
+                {
+                    if (room.CompareTag("Room"))
+                    {
+                        room.GetComponent<RoomUnloader>().generated = true;
+                    }
+                }
+                Rooms = new List<GameObject>();
+                generated = true;
             }
             tm = -1000f;
         }
     }
+    void RemoveMissing()
+    {
+        for (int i =0;i<Rooms.Count; i++)
+        {
+            if (Rooms[i] == null)
+            {
+                Rooms.RemoveAt(i);
+            }
+        }
+    }
+
 
     void Regenerate()
     {

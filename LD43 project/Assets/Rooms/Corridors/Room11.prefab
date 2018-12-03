@@ -123,6 +123,10 @@ GameObject:
   - component: {fileID: 4583155024059304}
   - component: {fileID: 2569400266483594772}
   - component: {fileID: 114439628049233346}
+  - component: {fileID: 114829502074491024}
+  - component: {fileID: 114963700776859716}
+  - component: {fileID: 50740337989049066}
+  - component: {fileID: 61307795462055628}
   m_Layer: 0
   m_Name: Room11
   m_TagString: Room
@@ -422,6 +426,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50740337989049066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439265171228246}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61307795462055628
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439265171228246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!61 &61356143839516492
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -578,6 +627,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c157577255080754bb7e39e7c3b228a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114829502074491024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439265171228246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6bce3a576dd9d4aa36ea467d8b8259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
+  Doors: {fileID: 1037567646708578}
+  Enemies: {fileID: 1339230094376744}
+  Layout: {fileID: 1238588344999652}
 --- !u!114 &114903597571551740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,6 +655,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Opening: 1
   done: 0
+--- !u!114 &114963700776859716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439265171228246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2fe0413a26b134eb06b4530dc8fac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  len: 0
+  generated: 0
 --- !u!212 &212116272034519298
 SpriteRenderer:
   m_ObjectHideFlags: 1

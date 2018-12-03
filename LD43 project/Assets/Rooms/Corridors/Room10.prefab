@@ -140,6 +140,10 @@ GameObject:
   - component: {fileID: 4741573324163136}
   - component: {fileID: 2569400267588131136}
   - component: {fileID: 114829268674222834}
+  - component: {fileID: 114234189548030128}
+  - component: {fileID: 114413900496416016}
+  - component: {fileID: 61262804008824012}
+  - component: {fileID: 50244510148772186}
   m_Layer: 0
   m_Name: Room10
   m_TagString: Room
@@ -362,6 +366,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50244510148772186
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671407409959646}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50537290029689846
 Rigidbody2D:
   serializedVersion: 4
@@ -422,6 +446,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61262804008824012
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671407409959646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!61 &61376517419738242
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -542,6 +591,34 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
+--- !u!114 &114234189548030128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671407409959646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6bce3a576dd9d4aa36ea467d8b8259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
+  Doors: {fileID: 1253839905500060}
+  Enemies: {fileID: 1641877512851386}
+  Layout: {fileID: 1101917780017670}
+--- !u!114 &114413900496416016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671407409959646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2fe0413a26b134eb06b4530dc8fac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  len: 0
+  generated: 0
 --- !u!114 &114564344141640734
 MonoBehaviour:
   m_ObjectHideFlags: 1

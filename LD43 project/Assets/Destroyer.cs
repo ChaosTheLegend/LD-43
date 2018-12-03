@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour {
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Update()
     {
-        if (other.CompareTag("Spawnpoint") || other.CompareTag("Blocker"))
+        GameObject[] Rooms = GameObject.FindGameObjectsWithTag("Room");
+        float len = 1000f;
+
+        foreach (GameObject rm in Rooms)
         {
-            Destroy(other.gameObject);
+            Vector3 dis = transform.position - rm.transform.position;
+            if (dis.magnitude < len)
+            {
+                len = dis.magnitude;
+            }
         }
+
+        if (len < 10f)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

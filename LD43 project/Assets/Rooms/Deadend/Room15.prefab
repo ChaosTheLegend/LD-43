@@ -74,6 +74,10 @@ GameObject:
   - component: {fileID: 4525458766778906}
   - component: {fileID: 2569400267238245274}
   - component: {fileID: 114611276079455304}
+  - component: {fileID: 114668251285457324}
+  - component: {fileID: 114590526389521566}
+  - component: {fileID: 50250555289221432}
+  - component: {fileID: 61884293089566616}
   m_Layer: 0
   m_Name: Room15
   m_TagString: Room
@@ -258,6 +262,26 @@ Transform:
   m_Father: {fileID: 4525458766778906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50250555289221432
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327158890424118}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50359239461441262
 Rigidbody2D:
   serializedVersion: 4
@@ -368,6 +392,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!61 &61884293089566616
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327158890424118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!66 &66509107367407846
 CompositeCollider2D:
   m_ObjectHideFlags: 1
@@ -401,6 +450,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Opening: 2
   done: 0
+--- !u!114 &114590526389521566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327158890424118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2fe0413a26b134eb06b4530dc8fac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  len: 0
+  generated: 0
 --- !u!114 &114611276079455304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,6 +474,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c157577255080754bb7e39e7c3b228a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114668251285457324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327158890424118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6bce3a576dd9d4aa36ea467d8b8259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
+  Doors: {fileID: 1682528891613460}
+  Enemies: {fileID: 1886701826103156}
+  Layout: {fileID: 1777095683781044}
 --- !u!114 &114898186640284852
 MonoBehaviour:
   m_ObjectHideFlags: 1
