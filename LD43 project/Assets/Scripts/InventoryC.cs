@@ -42,9 +42,9 @@ public class InventoryC : MonoBehaviour {
                 spear.SetActive(false);
                 break;
             case (0):
-            bow.SetActive(true);
-            sword.SetActive(false);
-            spear.SetActive(false);
+                bow.SetActive(true);
+                sword.SetActive(false);
+                spear.SetActive(false);
                 break;
             case (1):
                 bow.SetActive(false);
@@ -60,14 +60,20 @@ public class InventoryC : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             slot = 0;
+            //Play 'EquipBow' sound
+            // FindObjectOfType<AudioManager>().Play("EquipBow");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             slot = 1;
+            //Play 'EquipSword' sound
+            //FindObjectOfType<AudioManager>().Play("EquipSword");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             slot = 2;
+            //Play 'EquipSpear' sound
+            //FindObjectOfType<AudioManager>().Play("EquipSpear");
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)

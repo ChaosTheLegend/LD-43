@@ -16,6 +16,8 @@ public class SpearMovement : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             SpearAnim.SetBool("Atk",true);
+            //Play 'SpearAttack' sound
+            FindObjectOfType<AudioManager>().Play("SpearAttack");
         }
         if (Input.GetMouseButtonUp(0))
         {
