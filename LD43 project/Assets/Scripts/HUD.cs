@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HUD : MonoBehaviour {
     public Image[] Slots;
+    public Image[] SlotBackgorund;
     public Image Health;
     public Sprite[] HPStates;
+    public Sprite SlotEmpty;
+    public Sprite SlotFull;
+    public Sprite SlotActive;
+
 
 
     // Update is called once per frame
@@ -20,9 +25,20 @@ public class HUD : MonoBehaviour {
             {
                 Health.sprite = HPStates[hp - 1];
             }
-            Slots[0].sprite = RotatingThing.GetComponent<ItemControll>().weapon[0].sprite;
-            Slots[1].sprite = RotatingThing.GetComponent<ItemControll>().weapon[1].sprite;
-            Slots[2].sprite = RotatingThing.GetComponent<ItemControll>().weapon[2].sprite;
+            for (int i = 0; i < 3; i++)
+            {
+                if (RotatingThing.GetComponent<ItemControll>().weapon[i] != null)
+                {
+                    Slots[i].sprite = RotatingThing.GetComponent<ItemControll>().weapon[i].sprite;
+                    SlotBackgorund[i].sprite = SlotFull;
+                    Slots[i].color = new Color(1, 1, 1, 1);
+                }
+                else
+                {
+                    SlotBackgorund[i].sprite = SlotEmpty;
+                    Slots[i].color = new Color(1, 1, 1, 0);
+                }
+            }
         }
         catch { }
 

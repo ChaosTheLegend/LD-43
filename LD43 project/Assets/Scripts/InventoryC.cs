@@ -23,11 +23,24 @@ public class InventoryC : MonoBehaviour {
     void Update()
     {
         ItemControll inv = RotatingThing.GetComponent<ItemControll>();
-        int type = (int)inv.weapon[slot]._type;
+        int type;
+        if (inv.weapon[slot] != null)
+        {
+            type = (int)inv.weapon[slot]._type;
+        }
+        else
+        {
+            type = -1;
+        }
 
 
         switch(type)
         {
+            case (-1):
+                bow.SetActive(false);
+                sword.SetActive(false);
+                spear.SetActive(false);
+                break;
             case (0):
             bow.SetActive(true);
             sword.SetActive(false);
@@ -79,16 +92,36 @@ public class InventoryC : MonoBehaviour {
                 slot = 2;
             }
         }
-
-        if (FindNearestPickUp() != null)
+        if (FindNearestObject("Altar") != null)
         {
-            GameObject other = FindNearestPickUp();
+            GameObject other = FindNearestObject("Altar");
+            Vector3 dis = transform.position - other.transform.position;
+            float len = dis.magnitude;
+            if (Input.GetKeyDown(KeyCode.E) && len <= 1.6f && inv.weapon[slot] != null && !other.GetComponent<AltarControll>().sacrifice) 
+            {
+                other.GetComponent<AltarControll>().item = inv.weapon[slot];
+                inv.weapon[slot] = null;
+                other.GetComponent<AltarControll>().sacrifice = true;  
+            }
+        }
+
+
+        if (FindNearestObject("PickUp") != null)
+        {
+            GameObject other = FindNearestObject("PickUp");
             Vector3 dis = transform.position - other.transform.position;
             float len = dis.magnitude;
             if (Input.GetKeyDown(KeyCode.E) && len <= 1.2f)
             {
                 Weapons buffer = other.GetComponent<DropControll>().item;
-                other.GetComponent<DropControll>().item = inv.weapon[slot];
+                if (inv.weapon[slot] != null)
+                {
+                    other.GetComponent<DropControll>().item = inv.weapon[slot];
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
                 inv.weapon[slot] = buffer;
                 
                 //buffer = null;
@@ -99,11 +132,11 @@ public class InventoryC : MonoBehaviour {
     }
 
 
-    GameObject FindNearestPickUp()
+    GameObject FindNearestObject(string tag)
     {
         GameObject output = null;
         float mindis = 1000f;
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("PickUp");
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(tag);
         if (objs.Length > 0)
         {
             foreach (GameObject obj in objs)
