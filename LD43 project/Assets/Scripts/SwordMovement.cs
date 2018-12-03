@@ -19,6 +19,9 @@ public class SwordMovement : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             SwordAnim.SetBool("Atk", true);
+
+            //Play "SwordAttack" sound
+            FindObjectOfType<AudioManager>().Play("SwordAttack");
         }
         else
         {
