@@ -525,7 +525,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 926886e20d21a4b449178ed56e5ccdd6, type: 3}
   SlotEmpty: {fileID: 21300000, guid: 8b14fd6a3699dc148a08c9eacae69e15, type: 3}
   SlotFull: {fileID: 21300000, guid: 56ee7c472beaa33458691f42bee516fb, type: 3}
-  SlotActive: {fileID: 0}
+  SlotActive: {fileID: 21300000, guid: f70e659c8e4c1f748baa0b52562473d0, type: 3}
 --- !u!114 &114869361156181724
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,6 +38,10 @@ public class HUD : MonoBehaviour {
                     SlotBackgorund[i].sprite = SlotEmpty;
                     Slots[i].color = new Color(1, 1, 1, 0);
                 }
+                
+                int slot = player.GetComponent<InventoryC>().slot;
+                SlotBackgorund[slot].sprite = SlotActive;
+                
             }
         }
         catch { }

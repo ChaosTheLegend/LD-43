@@ -9,6 +9,8 @@ public class ArrowMovement : MonoBehaviour {
     public float speed;
     // Use this for initialization
     void Start () {
+
+        FindObjectOfType<AudioManager>().Play("BowFire");
         //target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
         //Physics2D.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider2D>(), GetComponent<Collider2D>());
@@ -30,6 +32,7 @@ public class ArrowMovement : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
+        //FindObjectOfType<AudioManager>().Play("ArrowHit");
         DestroyObject();
     }
 }
