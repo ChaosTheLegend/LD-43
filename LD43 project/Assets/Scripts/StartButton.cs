@@ -13,6 +13,6 @@ public class StartButton : MonoBehaviour {
     }
     void TaskOnClick()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Game");
     }
 }
