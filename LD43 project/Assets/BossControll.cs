@@ -14,13 +14,21 @@ public class BossControll : MonoBehaviour {
     public GameObject BodyPrefab;
     public GameObject TailPreefab;
 
-
+    public float HitCooldown;
+    float CD;
     public Transform path;
     public GameObject projectile;
     public List<Vector3> VisitedPoints;
     public float TimeDelay;
     float tm;
     public int length;
+    public float DelayBetweenAttacks;
+    float AtkDelay;
+    Vector3 dis = Vector3.zero;
+    public bool dead = false;
+    public float DieTimer;
+    float dietm;
+
 
     private Transform target;
 
@@ -51,16 +59,41 @@ public class BossControll : MonoBehaviour {
             }
             
         }
+
         else
         {
             tm -= Time.deltaTime;
         }
 
-        
+        if (dead)
+        {
+            if (dietm > 0)
+            {
+                dietm -= Time.deltaTime;
+            }
+            die();
+            active = false;
+        }
 
 
         if (active)
         {
+            if (AtkDelay <= 0)
+            {
+                AtkDelay = DelayBetweenAttacks;
+                attack = 2;
+            }
+            else
+            {
+                AtkDelay -= Time.deltaTime;
+            }
+
+            if (CD > 0)
+            {
+                CD -= Time.deltaTime;
+            }
+
+
             for (int i = 0; i < Body.Count + 1; i++)
             {
                 if (i == Body.Count)
@@ -122,7 +155,11 @@ public class BossControll : MonoBehaviour {
                     break;
             }
             //rotate head
-            Vector3 dis = target.position - transform.position;
+            
+            if (target != null)
+            {
+                dis = target.position - transform.position;
+            }
             float angle = Mathf.Atan2(dis.y, dis.x) * Mathf.Rad2Deg;
            
             if (angle > 90 || angle < -90)
@@ -168,10 +205,45 @@ public class BossControll : MonoBehaviour {
             if (CurrentPoint > path.GetComponent<PathControll>().points.Length-1)
             {
                 CurrentPoint = 0;
+                dead = true;
+                active = false;
             }
         }
 
         target = path.GetComponent<PathControll>().points[CurrentPoint];
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("HitBox") && CD <= 0)
+        {
+            health -= other.GetComponent<HitboxControll>().Damage;
+            CD = HitCooldown;
+            if (health <= 0)
+            {
+
+            }
+        }
+    }
+
+    void die()
+    {
+        if (dietm <= 0)
+        {
+            dietm = DieTimer;
+            if (Tail != null)
+            {
+                Destroy(Tail);
+                return;
+            }
+            if (Body.Count > 0)
+            {
+                Destroy(Body[Body.Count-1]);
+                Body.RemoveAt(Body.Count - 1);
+                return;
+            }
+            Destroy(gameObject);
+            
+        }
+    }
 }

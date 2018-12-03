@@ -279,20 +279,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58670acfef10d024692a6e7f92bd71c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   health: 2000
   speed: 15
-  Head: {fileID: 1984734640531364}
+  Head: {fileID: 1528525346430320}
   Body: []
   Tail: {fileID: 0}
   BodyPrefab: {fileID: 1834924120852144, guid: 3ae8e56929cf7e74cb616b80ca5d4b0a, type: 2}
   TailPreefab: {fileID: 1703565443142442, guid: d04961996b341d046837a3c0e0c61c0c,
     type: 2}
+  HitCooldown: 0
   path: {fileID: 0}
   projectile: {fileID: 1428096547118178, guid: 0bc1012082c12214794c02ec9a6b8d1a, type: 2}
   VisitedPoints: []
-  TimeDelay: 0.15
+  TimeDelay: 0.2
   length: 20
+  DelayBetweenAttacks: 5
+  dead: 0
+  DieTimer: 0.2
   ShootingPoints:
   - {fileID: 4405031811004016}
   - {fileID: 4071574516506144}
