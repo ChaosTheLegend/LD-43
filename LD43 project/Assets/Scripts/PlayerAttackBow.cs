@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttackBow : MonoBehaviour {
-    public Rigidbody2D arrow;
+    public GameObject arrow;
     public Transform ArrowSpawner;
 
     public float damage;

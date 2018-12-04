@@ -11,7 +11,7 @@ public class ItemControll : MonoBehaviour {
     public GameObject BowControll;
 
 
-    public GameObject Arrow;
+    public GameObject[] Arrow;
 
     public GameObject[] HitBoxes;
 
@@ -20,14 +20,22 @@ public class ItemControll : MonoBehaviour {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         int slot = player.GetComponent<InventoryC>().slot;
         int type;
+        int elem = 0;
         if (weapon[slot] != null)
         {
+            elem = (int)weapon[slot].element;
             type = (int)weapon[slot]._type;
+            if (weapon[slot]._type == Weapons.Type.bow)
+            {
+                BowControll.GetComponent<PlayerAttackBow>().arrow = Arrow[elem];
+            }
         }
         else
         {
             type = -1;
         }
+
+
         switch (type)
         {
             case (0):

@@ -81,7 +81,7 @@ public class BossControll : MonoBehaviour {
             if (AtkDelay <= 0)
             {
                 AtkDelay = DelayBetweenAttacks;
-                attack = 2;
+                attack = Random.Range(0, 2);
             }
             else
             {
@@ -205,8 +205,6 @@ public class BossControll : MonoBehaviour {
             if (CurrentPoint > path.GetComponent<PathControll>().points.Length-1)
             {
                 CurrentPoint = 0;
-                dead = true;
-                active = false;
             }
         }
 
@@ -221,7 +219,8 @@ public class BossControll : MonoBehaviour {
             CD = HitCooldown;
             if (health <= 0)
             {
-
+                dead = true;
+                active = false;
             }
         }
     }

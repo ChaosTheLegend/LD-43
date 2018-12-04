@@ -120,10 +120,16 @@ public class Templates : MonoBehaviour {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().active = true;
                 GenPanel.SetActive(false);
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                
                 foreach (GameObject enemy in enemies)
                 {
-                    enemy.GetComponent<EnemyHealth>().Element = (EnemyHealth.elements)element;
+                    try
+                    {
+                        enemy.GetComponent<EnemyHealth>().Element = (EnemyHealth.elements)element;
+                    }
+                    catch { }
                 }
+                
             }
             tm = -1000f;
         }
