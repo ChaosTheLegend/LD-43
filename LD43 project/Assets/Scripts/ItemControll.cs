@@ -8,6 +8,9 @@ public class ItemControll : MonoBehaviour {
     public GameObject Sword;
     public GameObject Spear;
     public GameObject Bow;
+    public GameObject BowControll;
+
+
     public GameObject Arrow;
 
     public GameObject[] HitBoxes;
@@ -28,6 +31,10 @@ public class ItemControll : MonoBehaviour {
         switch (type)
         {
             case (0):
+                BowControll.GetComponent<PlayerAttackBow>().damage = weapon[slot].Damage;
+                BowControll.GetComponent<PlayerAttackBow>().knockback = weapon[slot].Knockback;
+                BowControll.GetComponent<PlayerAttackBow>().element = (int)weapon[slot].element;
+
                 Bow.GetComponent<SpriteRenderer>().sprite = weapon[slot].sprite;
                 break;
             case (1):
