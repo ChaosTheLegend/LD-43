@@ -9,7 +9,7 @@ public class DoorControll : MonoBehaviour {
 	void Update () {
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(!open);
+            transform.GetChild(i).GetComponent<DoorColliderControll>().up = !open;
         }
     }
 }

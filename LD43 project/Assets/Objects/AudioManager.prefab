@@ -157,3 +157,8 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: BowFire
+    clip: {fileID: 8300000, guid: c5e163d9dbf343f418d90fa4bba5ba8f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
