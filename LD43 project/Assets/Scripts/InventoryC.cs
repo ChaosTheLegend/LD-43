@@ -12,7 +12,10 @@ public class InventoryC : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (HUD.publicHealth > 0)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
     // Use this for initialization
     void Start() {

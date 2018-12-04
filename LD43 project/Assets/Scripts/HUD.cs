@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour {
     public Sprite SlotEmpty;
     public Sprite SlotFull;
     public Sprite SlotActive;
+    public static int publicHealth;
 
 
 
@@ -19,6 +20,7 @@ public class HUD : MonoBehaviour {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject RotatingThing = player.GetComponent<InventoryC>().RotatingThing;
         int hp = player.GetComponent<HealthControll>().Health;
+        publicHealth = hp;
 
         try
         {
@@ -26,7 +28,11 @@ public class HUD : MonoBehaviour {
             {
                 Health.sprite = HPStates[hp - 1];
             }
-            
+            if(hp < 0)
+            {
+                hp = 3;
+                //SceneManager.LoadScene("MainMenu");
+            }
             for (int i = 0; i < 3; i++)
             {
                 if (RotatingThing.GetComponent<ItemControll>().weapon[i] != null)
