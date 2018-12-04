@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 297f56329c95ae547b7104bd92915771, type: 3}
   sprite: {fileID: 21300000, guid: 297f56329c95ae547b7104bd92915771, type: 3}
   Name: Advanced Sapphire Bow
-  Damage: 15
+  Damage: 23
   Knockback: 0
   element: 1
   _type: 0

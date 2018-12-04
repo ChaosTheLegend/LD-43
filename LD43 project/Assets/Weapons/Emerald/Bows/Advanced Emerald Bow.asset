@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 5c15e08bb71f2ef4b8eaf05d792b217a, type: 3}
   sprite: {fileID: 21300000, guid: 5c15e08bb71f2ef4b8eaf05d792b217a, type: 3}
   Name: Advanced Emerald Bow
-  Damage: 15
+  Damage: 23
   Knockback: 0
   element: 2
   _type: 0

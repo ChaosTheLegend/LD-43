@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: a1d90e571467a10408241456aa98fc9e, type: 3}
   sprite: {fileID: 21300000, guid: a1d90e571467a10408241456aa98fc9e, type: 3}
   Name: Basic Ruby Bow
-  Damage: 6
+  Damage: 10
   Knockback: 0
   element: 0
   _type: 0

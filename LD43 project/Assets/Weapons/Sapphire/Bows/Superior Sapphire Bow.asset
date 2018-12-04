@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 578b0aa0f6a5f7b4f879e7240e6513af, type: 3}
   sprite: {fileID: 21300000, guid: 578b0aa0f6a5f7b4f879e7240e6513af, type: 3}
   Name: Superior Sapphire Bow
-  Damage: 30
+  Damage: 40
   Knockback: 0.1
   element: 1
   _type: 0

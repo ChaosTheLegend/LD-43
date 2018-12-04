@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 9fc10ca4903d6204283269d10c525ebd, type: 3}
   sprite: {fileID: 21300000, guid: 9fc10ca4903d6204283269d10c525ebd, type: 3}
   Name: Superior Ruby Bow
-  Damage: 30
+  Damage: 40
   Knockback: 0.1
   element: 0
   _type: 0

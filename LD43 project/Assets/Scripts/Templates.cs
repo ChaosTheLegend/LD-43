@@ -31,6 +31,9 @@ public class Templates : MonoBehaviour {
     public List<GameObject> DeadEnds;
     public float LoadTime;
     public int MinSize;
+
+    public enum Element {Ruby,Sapphire,Emerald};
+    public Element element;
     float tm;
 
     public bool generated = false;
@@ -40,6 +43,8 @@ public class Templates : MonoBehaviour {
 
     private void Awake()
     {
+        int RNG = (int)Random.Range(0, 3);
+        element = (Element)RNG;
         tm = LoadTime;
     }
     private void Start()
@@ -114,6 +119,11 @@ public class Templates : MonoBehaviour {
                 generated = true;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().active = true;
                 GenPanel.SetActive(false);
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach (GameObject enemy in enemies)
+                {
+                    enemy.GetComponent<EnemyHealth>().Element = (EnemyHealth.elements)element;
+                }
             }
             tm = -1000f;
         }

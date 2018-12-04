@@ -12,6 +12,10 @@ public class EnemyHealth : MonoBehaviour
     public elements Element;
     public float ColldownTime;
     float timer;
+
+    public RuntimeAnimatorController[] Elements;
+    public Animator anim;
+
     // Use this for initialization
     void Start()
     {
@@ -29,6 +33,11 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        try
+        {
+            anim.runtimeAnimatorController = Elements[(int)Element];
+        }
+        catch { }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

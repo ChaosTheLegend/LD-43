@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 5c2cd4e17d09bfd4c9791b6eee9a6a40, type: 3}
   sprite: {fileID: 21300000, guid: 5c2cd4e17d09bfd4c9791b6eee9a6a40, type: 3}
   Name: Advanced Ruby Bows
-  Damage: 15
+  Damage: 23
   Knockback: 0
   element: 0
   _type: 0

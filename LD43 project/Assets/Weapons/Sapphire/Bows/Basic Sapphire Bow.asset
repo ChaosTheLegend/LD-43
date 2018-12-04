@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 72bce35cd01e5fe40ada2e6eaee2c3c7, type: 3}
   sprite: {fileID: 21300000, guid: 72bce35cd01e5fe40ada2e6eaee2c3c7, type: 3}
   Name: Basic Saphire Bow
-  Damage: 6
+  Damage: 10
   Knockback: 0
   element: 1
   _type: 0

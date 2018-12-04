@@ -14,7 +14,7 @@ MonoBehaviour:
   Ui: {fileID: 21300000, guid: 404fba0010440d440b7b08383aa15497, type: 3}
   sprite: {fileID: 21300000, guid: 404fba0010440d440b7b08383aa15497, type: 3}
   Name: Superior Emerald Bow
-  Damage: 30
+  Damage: 40
   Knockback: 0.1
   element: 2
   _type: 0
