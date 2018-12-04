@@ -20,15 +20,23 @@ public class Templates : MonoBehaviour {
     public GameObject[] DownEnd;
 
     public GameObject Wall;
+   
 
     public GameObject exit;
+    public GameObject chest;
+
     public GameObject StartRoom;
     public List<GameObject> Rooms;
+
+    public List<GameObject> DeadEnds;
     public float LoadTime;
     public int MinSize;
     float tm;
 
     public bool generated = false;
+
+    public Weapons[] WeaponPool;
+
 
     private void Awake()
     {
@@ -54,8 +62,42 @@ public class Templates : MonoBehaviour {
             }
             else
             {
-                Instantiate(exit, Rooms[Rooms.Count - 1].transform.position, transform.rotation);
+
                 RemoveMissing();
+                foreach (GameObject room in Rooms)
+                {
+                    if (room.CompareTag("Room"))
+                    {
+                        if (room.GetComponent<RoomControll>().Doors.transform.childCount == 1)
+                        {
+                            DeadEnds.Add(room);
+                        }
+                    }
+                }
+                
+                if (DeadEnds.Count < 3)
+                {
+                    Regenerate();
+                    return;
+                }
+
+
+
+                Instantiate(exit, DeadEnds[DeadEnds.Count - 1].transform.position, transform.rotation);
+                DeadEnds.RemoveAt(DeadEnds.Count - 1);
+
+                for (int i = 0; i < 2; i++)
+                {
+                    int RNG = Random.Range(0, DeadEnds.Count);
+                    Instantiate(chest, DeadEnds[RNG].transform.position, transform.rotation);
+                    DeadEnds.RemoveAt(RNG);
+                }
+                GameObject[] Chests = GameObject.FindGameObjectsWithTag("Chest");
+                foreach (GameObject Chest in Chests)
+                {
+                    Chest.GetComponent<ChestActivation>().Contance = WeaponPool[Random.Range(0, WeaponPool.Length)];
+                }
+
                 foreach (GameObject room in Rooms)
                 {
                     if (room.CompareTag("Room"))
@@ -65,6 +107,7 @@ public class Templates : MonoBehaviour {
                 }
                 Rooms = new List<GameObject>();
                 generated = true;
+                
             }
             tm = -1000f;
         }

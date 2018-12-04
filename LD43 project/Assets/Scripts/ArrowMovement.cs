@@ -17,7 +17,7 @@ public class ArrowMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         moveDirection.z = 0;
         moveDirection.Normalize();
-        Invoke("DestroyObject", 10);
+        Invoke("DestroyObject", 3);
     }
 
     // Update is called once per frame

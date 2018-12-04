@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4965348912252418}
   - component: {fileID: 212512232417178364}
   - component: {fileID: 61555376032451602}
-  - component: {fileID: 58734964349116542}
   - component: {fileID: 114935002261034144}
   m_Layer: 0
   m_Name: Chest
@@ -43,21 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58734964349116542
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1688615407204674}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.16
 --- !u!61 &61555376032451602
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -81,7 +65,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.12}
+  m_Size: {x: 0.8, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &114935002261034144
 MonoBehaviour:
@@ -95,8 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestText: {fileID: 1317165001077464, guid: 0fc35c04a0160a245a190a8da50fb057, type: 2}
-  WeaponTemplate: {fileID: 0}
+  WeaponTemplate: {fileID: 1745110754656262, guid: a014935db8653924c8912fb5dae58dbc,
+    type: 2}
   Contance: {fileID: 0}
+  open: {fileID: 21300000, guid: 646642cd686da324b922de652a65dfd6, type: 3}
   opened: 0
 --- !u!212 &212512232417178364
 SpriteRenderer:

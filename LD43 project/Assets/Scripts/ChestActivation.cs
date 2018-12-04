@@ -6,6 +6,7 @@ public class ChestActivation : MonoBehaviour {
     public GameObject chestText;
     public GameObject WeaponTemplate;
     public Weapons Contance;
+    public Sprite open;
     public bool opened = false;
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,12 @@ public class ChestActivation : MonoBehaviour {
             {
                 chestText.SetActive(false);
             }
+
+            if(opened)
+            {
+                GetComponent<SpriteRenderer>().sprite = open;
+            }
+
         }
 
     }
