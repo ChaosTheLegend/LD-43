@@ -35,17 +35,22 @@ public class RoomControll : MonoBehaviour {
         }
         if (State == RoomState.active)
         {
-            if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name == "BossHead" && GameObject.FindGameObjectWithTag("Boss").transform.parent == transform)
+            try
             {
-                GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).GetComponent<BossControll>().active = true;
-                Doors.transform.GetComponent<DoorControll>().open = false;
-                return;
-            }
+
+                if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name == "BossHead" && GameObject.FindGameObjectWithTag("Boss").transform.parent == transform)
+                {
+                    GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).GetComponent<BossControll>().active = true;
+                    Doors.transform.GetComponent<DoorControll>().open = false;
+                    return;
+                }
             else if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name != "BossHead")
             {
                 State = RoomState.cleared;
             }
-            
+            }
+            catch { }
+
             if (Enemies.transform.childCount == 0)
             {
                 State = RoomState.cleared;

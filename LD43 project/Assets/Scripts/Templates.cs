@@ -20,7 +20,7 @@ public class Templates : MonoBehaviour {
     public GameObject[] DownEnd;
 
     public GameObject Wall;
-   
+    public GameObject GenPanel;
 
     public GameObject exit;
     public GameObject chest;
@@ -66,13 +66,18 @@ public class Templates : MonoBehaviour {
                 RemoveMissing();
                 foreach (GameObject room in Rooms)
                 {
-                    if (room.CompareTag("Room"))
+                    try
                     {
-                        if (room.GetComponent<RoomControll>().Doors.transform.childCount == 1)
+
+                        if (room.CompareTag("Room"))
                         {
-                            DeadEnds.Add(room);
+                            if (room.GetComponent<RoomControll>().Doors.transform.childCount == 1)
+                            {
+                                DeadEnds.Add(room);
+                            }
                         }
                     }
+                    catch { }
                 }
                 
                 if (DeadEnds.Count < 3)
@@ -107,7 +112,8 @@ public class Templates : MonoBehaviour {
                 }
                 Rooms = new List<GameObject>();
                 generated = true;
-                
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().active = true;
+                GenPanel.SetActive(false);
             }
             tm = -1000f;
         }

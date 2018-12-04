@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &583496897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1928956360499812, guid: 5f0170e3b4647e644b98e3d163293655,
+    type: 2}
+  m_PrefabInternal: {fileID: 1821574460}
 --- !u!1 &608002026
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +660,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114078508710752152, guid: d31d0b2278ccbd3459f2b8c18b36a181,
+        type: 2}
+      propertyPath: GenPanel
+      value: 
+      objectReference: {fileID: 583496897}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31d0b2278ccbd3459f2b8c18b36a181, type: 2}
   m_IsPrefabAsset: 0
@@ -796,6 +806,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224403308358439006, guid: 5f0170e3b4647e644b98e3d163293655,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.5999756
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0170e3b4647e644b98e3d163293655, type: 2}
