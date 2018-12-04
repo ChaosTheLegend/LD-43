@@ -6,16 +6,26 @@ public class AltarControll : MonoBehaviour {
 
     public bool sacrifice = false;
     public Weapons item;
+    public bool usable = false;
     public SpriteRenderer weapon;
+
+    public GameObject ShineEffect;
+    public GameObject[] BeamEffect;
 	void Update () {
         if (sacrifice)
         {
             weapon.sprite = item.sprite;
             weapon.color = new Color(1, 1, 1, 1);
+            ShineEffect.SetActive(false);
+            BeamEffect[(int)item.element].SetActive(true);
         }
         else
         {
             weapon.color = new Color(1, 1, 1, 0);
+        }
+        if (usable && !sacrifice)
+        {
+            ShineEffect.SetActive(true);
         }
 	}
 }

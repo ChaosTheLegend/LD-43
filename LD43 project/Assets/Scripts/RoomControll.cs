@@ -47,6 +47,7 @@ public class RoomControll : MonoBehaviour {
             else if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name != "BossHead")
             {
                 State = RoomState.cleared;
+                    GameObject.FindGameObjectWithTag("Altar").GetComponent<AltarControll>().usable = true;
             }
             }
             catch { }

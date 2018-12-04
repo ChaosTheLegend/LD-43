@@ -24,14 +24,9 @@ public class HUD : MonoBehaviour {
 
         try
         {
-            if (hp > 0)
+            if (hp >= 0)
             {
-                Health.sprite = HPStates[hp - 1];
-            }
-            if(hp < 0)
-            {
-                hp = 3;
-                //SceneManager.LoadScene("MainMenu");
+                Health.sprite = HPStates[hp];
             }
             for (int i = 0; i < 3; i++)
             {

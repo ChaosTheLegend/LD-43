@@ -101,7 +101,7 @@ public class InventoryC : MonoBehaviour {
                 slot = 2;
             }
         }
-        if (FindNearestObject("Altar") != null)
+        if (FindNearestObject("Altar") != null && FindNearestObject("Altar").GetComponent<AltarControll>().usable)
         {
             GameObject other = FindNearestObject("Altar");
             Vector3 dis = transform.position - other.transform.position;

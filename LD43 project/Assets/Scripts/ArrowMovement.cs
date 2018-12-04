@@ -32,7 +32,10 @@ public class ArrowMovement : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        //FindObjectOfType<AudioManager>().Play("ArrowHit");
-        DestroyObject();
+        if (!col.gameObject.CompareTag("Player"))
+        {
+            //FindObjectOfType<AudioManager>().Play("ArrowHit");
+            DestroyObject();
+        }
     }
 }

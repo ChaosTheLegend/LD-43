@@ -145,6 +145,10 @@ public class Templates : MonoBehaviour {
         }
     }
 
+    void RegenerateEverything(int element)
+    {
+
+    }
 
     void Regenerate()
     {

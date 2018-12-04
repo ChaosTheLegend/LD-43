@@ -297,6 +297,8 @@ MonoBehaviour:
   DelayBetweenAttacks: 5
   dead: 0
   DieTimer: 0.2
+  DeathParticle: {fileID: 1589936860736632, guid: 5fed417277c22bd419e52401a8bd1b5a,
+    type: 2}
   ShootingPoints:
   - {fileID: 4405031811004016}
   - {fileID: 4071574516506144}

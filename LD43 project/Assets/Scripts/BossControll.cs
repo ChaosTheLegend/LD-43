@@ -29,6 +29,7 @@ public class BossControll : MonoBehaviour {
     public float DieTimer;
     float dietm;
 
+    public GameObject DeathParticle;
 
     private Transform target;
 
@@ -207,8 +208,11 @@ public class BossControll : MonoBehaviour {
                 CurrentPoint = 0;
             }
         }
-
-        target = path.GetComponent<PathControll>().points[CurrentPoint];
+        try
+        {
+            target = path.GetComponent<PathControll>().points[CurrentPoint];
+        }
+        catch { }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -232,15 +236,19 @@ public class BossControll : MonoBehaviour {
             dietm = DieTimer;
             if (Tail != null)
             {
+                Instantiate(DeathParticle, Tail.transform.position, Quaternion.identity);
                 Destroy(Tail);
+                
                 return;
             }
             if (Body.Count > 0)
             {
+                Instantiate(DeathParticle, Body[Body.Count - 1].transform.position, Quaternion.identity);
                 Destroy(Body[Body.Count-1]);
                 Body.RemoveAt(Body.Count - 1);
                 return;
             }
+            Instantiate(DeathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
             
         }
