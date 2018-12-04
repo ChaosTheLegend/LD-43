@@ -83,7 +83,7 @@ public class Templates : MonoBehaviour {
 
 
 
-                Instantiate(exit, DeadEnds[DeadEnds.Count - 1].transform.position, transform.rotation);
+                Instantiate(exit, DeadEnds[DeadEnds.Count - 1].transform.position, transform.rotation, DeadEnds[DeadEnds.Count - 1].transform);
                 DeadEnds.RemoveAt(DeadEnds.Count - 1);
 
                 for (int i = 0; i < 2; i++)

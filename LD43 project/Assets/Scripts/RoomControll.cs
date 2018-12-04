@@ -19,10 +19,13 @@ public class RoomControll : MonoBehaviour {
             var bounds = collider.bounds;
             bounds.size *= 0.89f;
             bnd = bounds;
+            bnd.center = transform.position;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             var Pcollider = player.GetComponent<Collider2D>();
             var Pbounds = Pcollider.bounds;
             Pbounds.size *= 0.99999f;
+            Pbounds.center = player.transform.position;
+
             if (bounds.Intersects(Pbounds))
             {
                 State = RoomState.active;
@@ -32,6 +35,17 @@ public class RoomControll : MonoBehaviour {
         }
         if (State == RoomState.active)
         {
+            if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name == "BossHead" && GameObject.FindGameObjectWithTag("Boss").transform.parent == transform)
+            {
+                GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).GetComponent<BossControll>().active = true;
+                Doors.transform.GetComponent<DoorControll>().open = false;
+                return;
+            }
+            else if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name != "BossHead")
+            {
+                State = RoomState.cleared;
+            }
+            
             if (Enemies.transform.childCount == 0)
             {
                 State = RoomState.cleared;

@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerAttackBow : MonoBehaviour {
     public Rigidbody2D arrow;
     public Transform ArrowSpawner;
-	// Use this for initialization
-	void Start () {
+
+    public float damage;
+    public float knockback;
+    public int element;
+
+    // Use this for initialization
+    void Start () {
         
     }
 	
@@ -14,7 +19,11 @@ public class PlayerAttackBow : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(arrow, ArrowSpawner.transform.position, ArrowSpawner.transform.rotation);
+            GameObject ar = Instantiate(arrow, ArrowSpawner.transform.position, ArrowSpawner.transform.rotation).gameObject;
+            ar.GetComponent<HitboxControll>().Damage = damage;
+            ar.GetComponent<HitboxControll>().Knockback = knockback;
+            ar.GetComponent<HitboxControll>().Element = element;
+
         }
 
     }
