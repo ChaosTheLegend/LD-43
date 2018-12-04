@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class HUD : MonoBehaviour {
     public Image[] Slots;
@@ -24,6 +25,10 @@ public class HUD : MonoBehaviour {
             if (hp > 0)
             {
                 Health.sprite = HPStates[hp - 1];
+            }
+            if (hp <= 0)
+            {
+                SceneManager.LoadScene("Game");
             }
             for (int i = 0; i < 3; i++)
             {
