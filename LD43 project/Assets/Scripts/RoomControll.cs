@@ -55,6 +55,15 @@ public class RoomControll : MonoBehaviour {
             {
                 State = RoomState.cleared;
             }
+            else
+            {
+                GameObject[] enemies = new GameObject[Enemies.transform.childCount];
+                for (int i = 0; i < Enemies.transform.childCount; i++)
+                {
+                    enemies[i] = Enemies.transform.GetChild(i).gameObject;
+                    enemies[i].GetComponent<EnemyMovement>().active = true;
+                }
+            }
             Doors.transform.GetComponent<DoorControll>().open = false;
         }
 
