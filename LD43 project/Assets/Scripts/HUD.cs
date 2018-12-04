@@ -26,11 +26,7 @@ public class HUD : MonoBehaviour {
             {
                 Health.sprite = HPStates[hp - 1];
             }
-            if (hp <= 0)
-            {
-                SceneManager.LoadScene("Game");
-                hp = 3;
-            }
+            
             for (int i = 0; i < 3; i++)
             {
                 if (RotatingThing.GetComponent<ItemControll>().weapon[i] != null)
