@@ -16,10 +16,6 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-
-        if (player && active)
-        {
             if (player.transform.position.x > transform.position.x)
                 x = 1;
             if (player.transform.position.x == transform.position.x)
@@ -33,10 +29,5 @@ public class EnemyMovement : MonoBehaviour {
             if (player.transform.position.y < transform.position.y)
                 y = -1;
             rb.velocity = new Vector2(speed * x, speed * y);
-        }
-        else
-        {
-            rb.velocity = Vector3.zero;
-        }
     }
 }
