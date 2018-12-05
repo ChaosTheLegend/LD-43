@@ -10,7 +10,6 @@ public class ItemControll : MonoBehaviour {
     public GameObject Bow;
     public GameObject BowControll;
 
-
     public GameObject[] Arrow;
 
     public GameObject[] HitBoxes;

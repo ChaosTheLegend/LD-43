@@ -37,7 +37,7 @@ public class Templates : MonoBehaviour {
     float tm;
 
     public bool generated = false;
-
+    public bool cleared = false;
     public Weapons[] WeaponPool;
 
 
@@ -54,6 +54,16 @@ public class Templates : MonoBehaviour {
 
     private void Update()
     {
+        
+        if (cleared && generated)
+        {
+            GameObject Altar = GameObject.FindGameObjectWithTag("Altar");
+            RegenerateEverything((int)Altar.GetComponent<AltarControll>().item.element);
+            cleared = false;
+            generated = false;
+            return;
+        }
+
         if (tm > 0)
         {
             tm -= Time.deltaTime;
@@ -73,7 +83,6 @@ public class Templates : MonoBehaviour {
                 {
                     try
                     {
-
                         if (room.CompareTag("Room"))
                         {
                             if (room.GetComponent<RoomControll>().Doors.transform.childCount == 1)
@@ -99,7 +108,11 @@ public class Templates : MonoBehaviour {
                 for (int i = 0; i < 2; i++)
                 {
                     int RNG = Random.Range(0, DeadEnds.Count);
-                    Instantiate(chest, DeadEnds[RNG].transform.position, transform.rotation);
+                    try
+                    {
+                        Instantiate(chest, DeadEnds[RNG].transform.position, transform.rotation);
+                    }
+                    catch { }
                     DeadEnds.RemoveAt(RNG);
                 }
                 GameObject[] Chests = GameObject.FindGameObjectsWithTag("Chest");
@@ -110,12 +123,16 @@ public class Templates : MonoBehaviour {
 
                 foreach (GameObject room in Rooms)
                 {
-                    if (room.CompareTag("Room"))
+                    try
                     {
-                        room.GetComponent<RoomUnloader>().generated = true;
+                        if (room.CompareTag("Room"))
+                        {
+                            room.GetComponent<RoomUnloader>().generated = true;
+                        }
                     }
+                    catch { }
                 }
-                Rooms = new List<GameObject>();
+                //Rooms = new List<GameObject>();
                 generated = true;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().active = true;
                 GenPanel.SetActive(false);
@@ -145,22 +162,48 @@ public class Templates : MonoBehaviour {
         }
     }
 
-    void RegenerateEverything(int element)
+    void RegenerateEverything(int Elem)
     {
-
-    }
-
-    void Regenerate()
-    {
-        
+        GenPanel.SetActive(true);
         foreach (GameObject room in Rooms)
         {
             Destroy(room.gameObject);
         }
         Rooms = new List<GameObject>();
+        GameObject[] presets = GameObject.FindGameObjectsWithTag("Preset");
+        GameObject Boss = GameObject.FindGameObjectWithTag("Boss");
+        GameObject[] Pickups = GameObject.FindGameObjectsWithTag("PickUp");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        foreach (GameObject pres in presets)
+        {
+            Destroy(pres);
+        }
+        foreach (GameObject pick in Pickups)
+        {
+            Destroy(pick);
+        }
+        Destroy(Boss);
+        player.transform.position = Vector3.zero;
+
+        player.GetComponent<CharacterMovement>().active = false;
+        element = (Element)Elem;
+        DeadEnds = new List<GameObject>();
+        Rooms = new List<GameObject>();
+        Regenerate();
+    }
+
+    void Regenerate()
+    {
+        if (Rooms.Count > 0)
+        {
+            foreach (GameObject room in Rooms)
+            {
+                Destroy(room.gameObject);
+            }
+            Rooms = new List<GameObject>();
+        } 
         Instantiate(StartRoom, Vector3.zero, transform.rotation);
         tm = LoadTime;
-        
     }
 
 }

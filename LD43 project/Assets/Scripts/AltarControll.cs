@@ -8,6 +8,7 @@ public class AltarControll : MonoBehaviour {
     public Weapons item;
     public bool usable = false;
     public SpriteRenderer weapon;
+    bool heal = false;
 
     public GameObject ShineEffect;
     public GameObject[] BeamEffect;
@@ -18,6 +19,12 @@ public class AltarControll : MonoBehaviour {
             weapon.color = new Color(1, 1, 1, 1);
             ShineEffect.SetActive(false);
             BeamEffect[(int)item.element].SetActive(true);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (!heal)
+            {
+                player.GetComponent<HealthControll>().Health = 3;
+                heal = true;
+            }
         }
         else
         {

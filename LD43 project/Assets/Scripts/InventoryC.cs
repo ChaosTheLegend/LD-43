@@ -9,7 +9,7 @@ public class InventoryC : MonoBehaviour {
     public GameObject spear;
     public GameObject RotatingThing;
     public int slot;
-
+    public bool active;
     void Awake()
     {
         if (HUD.publicHealth > 0)
@@ -25,6 +25,14 @@ public class InventoryC : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (!active)
+        {
+            bow.SetActive(false);
+            sword.SetActive(false);
+            spear.SetActive(false);
+            return;
+        }
+
         ItemControll inv = RotatingThing.GetComponent<ItemControll>();
         int type;
         if (inv.weapon[slot] != null)
@@ -63,20 +71,67 @@ public class InventoryC : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             slot = 0;
-            //Play 'EquipBow' sound
-            // FindObjectOfType<AudioManager>().Play("EquipBow");
+            if (inv.weapon[0] != null)
+            {
+                type = (int)inv.weapon[0]._type;
+                switch (type)
+                {
+                    case (-1):
+                        break;
+                    case (0):
+                        FindObjectOfType<AudioManager>().Play("EquipBow");
+                        break;
+                    case (1):
+                        FindObjectOfType<AudioManager>().Play("EquipSword");
+                        break;
+                    case (2):
+                        FindObjectOfType<AudioManager>().Play("EquipSpear");
+                        break;
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             slot = 1;
-            //Play 'EquipSword' sound
-            //FindObjectOfType<AudioManager>().Play("EquipSword");
+            if (inv.weapon[1] != null)
+            {
+                type = (int)inv.weapon[0]._type;
+                switch (type)
+                {
+                    case (-1):
+                        break;
+                    case (0):
+                        FindObjectOfType<AudioManager>().Play("EquipBow");
+                        break;
+                    case (1):
+                        FindObjectOfType<AudioManager>().Play("EquipSword");
+                        break;
+                    case (2):
+                        FindObjectOfType<AudioManager>().Play("EquipSpear");
+                        break;
+                }
+            }
+            //Play
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             slot = 2;
-            //Play 'EquipSpear' sound
-            //FindObjectOfType<AudioManager>().Play("EquipSpear");
+            if (inv.weapon[0] != null)
+            {
+                type = (int)inv.weapon[0]._type;
+                switch (type)
+                {
+                    case (0):
+                        FindObjectOfType<AudioManager>().Play("EquipBow");
+                        break;
+                    case (1):
+                        FindObjectOfType<AudioManager>().Play("EquipSword");
+                        break;
+                    case (2):
+                        FindObjectOfType<AudioManager>().Play("EquipSpear");
+                        break;
+                }
+            }
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
@@ -89,6 +144,22 @@ public class InventoryC : MonoBehaviour {
             {
                 slot = 0;
             }
+            if (inv.weapon[0] != null)
+            {
+                type = (int)inv.weapon[0]._type;
+                switch (type)
+                {
+                    case (0):
+                        FindObjectOfType<AudioManager>().Play("EquipBow");
+                        break;
+                    case (1):
+                        FindObjectOfType<AudioManager>().Play("EquipSword");
+                        break;
+                    case (2):
+                        FindObjectOfType<AudioManager>().Play("EquipSpear");
+                        break;
+                }
+            }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -99,6 +170,22 @@ public class InventoryC : MonoBehaviour {
             else
             {
                 slot = 2;
+            }
+            if (inv.weapon[0] != null)
+            {
+                type = (int)inv.weapon[0]._type;
+                switch (type)
+                {
+                    case (0):
+                        FindObjectOfType<AudioManager>().Play("EquipBow");
+                        break;
+                    case (1):
+                        FindObjectOfType<AudioManager>().Play("EquipSword");
+                        break;
+                    case (2):
+                        FindObjectOfType<AudioManager>().Play("EquipSpear");
+                        break;
+                }
             }
         }
         if (FindNearestObject("Altar") != null && FindNearestObject("Altar").GetComponent<AltarControll>().usable)
@@ -112,6 +199,7 @@ public class InventoryC : MonoBehaviour {
                 inv.weapon[slot] = null;
                 other.GetComponent<AltarControll>().sacrifice = true;  
             }
+            FindObjectOfType<AudioManager>().Play("AltarSacrifice");
         }
 
 
@@ -132,7 +220,7 @@ public class InventoryC : MonoBehaviour {
                     Destroy(other.gameObject);
                 }
                 inv.weapon[slot] = buffer;
-                
+                FindObjectOfType<AudioManager>().Play("ItemPickUp");
                 //buffer = null;
             }
         }

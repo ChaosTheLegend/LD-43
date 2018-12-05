@@ -15,6 +15,7 @@ TagManager:
   - Blocker
   - Chest
   - Boss
+  - Preset
   layers:
   - Default
   - TransparentFX

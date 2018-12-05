@@ -20,6 +20,7 @@ public class CharacterMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GetComponent<InventoryC>().active = active;
         if (active)
         {
             if (Input.GetKeyDown("d"))

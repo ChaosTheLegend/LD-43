@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4136130159785098}
   m_Layer: 0
   m_Name: ChestPreset
-  m_TagString: Untagged
+  m_TagString: Preset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

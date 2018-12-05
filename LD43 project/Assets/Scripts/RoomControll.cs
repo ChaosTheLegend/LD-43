@@ -28,6 +28,7 @@ public class RoomControll : MonoBehaviour {
 
             if (bounds.Intersects(Pbounds))
             {
+                FindObjectOfType<AudioManager>().Play("DoorClose");
                 State = RoomState.active;
             }
 
@@ -46,7 +47,8 @@ public class RoomControll : MonoBehaviour {
                 }
             else if (GameObject.FindGameObjectWithTag("Boss").transform.GetChild(1).name != "BossHead")
             {
-                State = RoomState.cleared;
+                    FindObjectOfType<AudioManager>().Play("DoorOpen");
+                    State = RoomState.cleared;
                     GameObject.FindGameObjectWithTag("Altar").GetComponent<AltarControll>().usable = true;
             }
             }
@@ -54,6 +56,7 @@ public class RoomControll : MonoBehaviour {
 
             if (Enemies.transform.childCount == 0)
             {
+                FindObjectOfType<AudioManager>().Play("DoorOpen");
                 State = RoomState.cleared;
             }
             else

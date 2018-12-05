@@ -26,6 +26,7 @@ public class ChestActivation : MonoBehaviour {
                     {
                         GameObject obj = Instantiate(WeaponTemplate, transform.position + new Vector3(0, -1.3f, 0), Quaternion.identity);
                         obj.GetComponent<DropControll>().item = Contance;
+                        FindObjectOfType<AudioManager>().Play("ChestOpen");
                         opened = true;
                     }
             }
