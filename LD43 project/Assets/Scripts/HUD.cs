@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour {
     public Sprite SlotEmpty;
     public Sprite SlotFull;
     public Sprite SlotActive;
+    public Text level;
     public static int publicHealth;
 
 
@@ -21,6 +22,10 @@ public class HUD : MonoBehaviour {
         GameObject RotatingThing = player.GetComponent<InventoryC>().RotatingThing;
         int hp = player.GetComponent<HealthControll>().Health;
         publicHealth = hp;
+        GameObject temp = GameObject.FindGameObjectWithTag("Template");
+        int lev = temp.GetComponent<Templates>().level;
+        level.text = "Level:"+lev.ToString();
+
 
         try
         {

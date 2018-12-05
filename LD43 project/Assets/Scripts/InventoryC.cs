@@ -197,9 +197,9 @@ public class InventoryC : MonoBehaviour {
             {
                 other.GetComponent<AltarControll>().item = inv.weapon[slot];
                 inv.weapon[slot] = null;
-                other.GetComponent<AltarControll>().sacrifice = true;  
+                other.GetComponent<AltarControll>().sacrifice = true;
+                FindObjectOfType<AudioManager>().Play("AltarSacrifice");
             }
-            FindObjectOfType<AudioManager>().Play("AltarSacrifice");
         }
 
 

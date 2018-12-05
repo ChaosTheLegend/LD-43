@@ -35,7 +35,7 @@ public class Templates : MonoBehaviour {
     public enum Element {Ruby,Sapphire,Emerald};
     public Element element;
     float tm;
-
+    public int level = 1;
     public bool generated = false;
     public bool cleared = false;
     public Weapons[] WeaponPool;
@@ -164,6 +164,7 @@ public class Templates : MonoBehaviour {
 
     void RegenerateEverything(int Elem)
     {
+        level++;
         GenPanel.SetActive(true);
         foreach (GameObject room in Rooms)
         {

@@ -848,6 +848,7 @@ MonoBehaviour:
   HitBox: {fileID: 61032658133615764}
   DeathEffect: {fileID: 1580207887176310, guid: 1aa2d01a48b6df448a4a98c006fcf8ff,
     type: 2}
+  DeadPanel: {fileID: 0}
 --- !u!114 &114570255973492210
 MonoBehaviour:
   m_ObjectHideFlags: 1
