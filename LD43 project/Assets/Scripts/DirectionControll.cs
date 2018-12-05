@@ -9,8 +9,8 @@ public class DirectionControll : MonoBehaviour {
     // Use this for initialization
     private Templates temp;
     public bool done = false;
-    int MaxLengh = 30;
-    int MinLengh = 15;
+    int MaxLengh = 15;
+    int MinLengh = 10;
 
     private void Awake()
     {
