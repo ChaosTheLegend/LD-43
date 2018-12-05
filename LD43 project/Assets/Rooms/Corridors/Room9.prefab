@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114150363116009116
 MonoBehaviour:
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114363111818723882
 MonoBehaviour:
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114441683778016144
 MonoBehaviour:
@@ -2887,7 +2887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114564621034974528
 MonoBehaviour:
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114705980196407254
 MonoBehaviour:
@@ -2947,7 +2947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114750205657149414
 MonoBehaviour:
@@ -2960,7 +2960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114750909326566130
 MonoBehaviour:
@@ -2986,7 +2986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114835955522724310
 MonoBehaviour:
@@ -3065,7 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a6047989a5da4e866569849049d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 150
   active: 0
 --- !u!114 &114978879953745078
 MonoBehaviour:

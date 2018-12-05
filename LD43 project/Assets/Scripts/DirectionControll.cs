@@ -32,7 +32,7 @@ public class DirectionControll : MonoBehaviour {
                 switch (Opening)
             {
                 case (direction.up):
-                    if (RNG < 30)
+                    if (RNG < 45)
                     {
                         Instantiate(temp.UpWay[Random.Range(0, temp.UpWay.Length)], transform.position, transform.rotation);
                     }

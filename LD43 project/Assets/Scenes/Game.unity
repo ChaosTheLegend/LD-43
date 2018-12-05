@@ -555,6 +555,11 @@ Prefab:
       propertyPath: DeadPanel
       value: 
       objectReference: {fileID: 1979841236}
+    - target: {fileID: 114175780788013358, guid: 6f2f501ef027b2c4c8141fcb7d051927,
+        type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2f501ef027b2c4c8141fcb7d051927, type: 2}
   m_IsPrefabAsset: 0
@@ -747,6 +752,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235190780777282, guid: 5f0170e3b4647e644b98e3d163293655, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0170e3b4647e644b98e3d163293655, type: 2}

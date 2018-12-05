@@ -66,13 +66,13 @@ public class EnemyHealth : MonoBehaviour
                     switch (Helement)
                     {
                         case (0):
-                            multiplier = 1.4f;
+                            multiplier = 0.7f;
                             break;
                         case (1):
                             multiplier = 1f;
                             break;
                         case (2):
-                            multiplier = 0.7f;
+                            multiplier = 1.4f;
                             break;
                     }
                     break;
@@ -80,10 +80,10 @@ public class EnemyHealth : MonoBehaviour
                     switch (Helement)
                     {
                         case (0):
-                            multiplier = 0.7f;
+                            multiplier = 1.4f;
                             break;
                         case (1):
-                            multiplier = 1.4f;
+                            multiplier = 0.7f;
                             break;
                         case (2):
                             multiplier = 1f;
